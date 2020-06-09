@@ -1,0 +1,12 @@
+mixin color(name, descr, color)
+    li(class='colors__li colors__li--'+color)
+        dl
+            dt.colors__name= name
+            dd.colors__descr= descr
+        
+mixin type(size, name)
+    li
+        dl.types__container
+            dt(class='types__tag types__tag--'+size)= name
+            dd.types__descr
+                block

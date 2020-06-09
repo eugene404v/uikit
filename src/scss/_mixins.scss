@@ -1,0 +1,4 @@
+@mixin section-wrapper($width: 200px) {
+  width: $width;
+  background-color: red;
+}
