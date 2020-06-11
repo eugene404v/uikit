@@ -10,3 +10,54 @@ mixin type(size, name)
             dt(class='types__tag types__tag--'+size)= name
             dd.types__descr
                 block
+
+mixin form-element(name, descr)
+    div
+        dl.forms__container
+            dt.forms__name= name
+            dd.forms__descr= descr
+        block
+
+mixin text-field(name, placeholder, modifier)
+    input(type="text", name=""+name, placeholder=""+placeholder, class="text-field "+modifier)
+
+mixin checkbox(check, label, name, id, value)
+    label(for=""+id).checkbox= label
+        input(type="checkbox", id=""+id, name=""+name, value=""+value, checked="#{check}")
+
+mixin radio(check, label, name, id, value)
+    label(for=""+id).radio= label
+        input(type="radio", id=""+id, name=""+name, value=""+value, checked="#{check}")
+
+mixin toggle(check, label, name, id, value)
+    label(for=""+id).toggle= label
+        input(type="checkbox", id=""+id, name=""+name, value=""+value, checked="#{check}")
+
+mixin like(value, modifier)
+    button(class="like "+modifier)= value
+
+mixin btn(value, styles, id)
+    button(class="btn "+styles, id=""+id)= value
+
+mixin btn--pay(value, styles, id, href)
+    a(href=""+href, class="btn "+styles, id=""+id)= value
+
+mixin pagination(styles)
+    div(class="pagination "+styles)
+        ul
+            li
+                a.pagination__link.pagination__link--active(href="#") 1
+            li
+                a.pagination__link(href="#") 2
+            li
+                a.pagination__link(href="#") 3
+            li
+                p ...
+            li
+                a.pagination__link(href="#") 15
+            li
+                a.pagination__link.pagination__link--last(href="#") 1111
+        p.pagination__descr 1 – 12 из 100+ вариантов аренды
+        
+        
+        

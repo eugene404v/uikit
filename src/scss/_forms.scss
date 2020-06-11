@@ -1,0 +1,10 @@
+.forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'inputs checks btns'
+    'drop1 drop2 drop3'
+    'expandable checklist bulletlist'
+    'features comment comment';
+}

@@ -6,10 +6,53 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Colors and types
+        title Form elements
+        link(rel="stylesheet", href="main.scss")
     body
         main.ui-kit
-            section.form-elements
+            section.forms
+                .forms__inputs
+                    +form-element("text-field", "default")
+                        +text-field("name", "Email", "")
+                    +form-element("text-field", "hover/focus")
+                        +text-field("name", "This is pretty awesome", "text-field--active")
+                .forms__checks
+                    +form-element("checkbox buttons", "")
+                        +checkbox("", "Можно курить", "1", "check1", "value")
+                        +checkbox("", "Можно курить", "1", "check2", "value")
+                        +checkbox("", "Можно курить", "1", "check3", "value")
+                    +form-element("radio buttons", "")
+                        +radio("", "male", "2", "maler", "value")
+                        +radio("", "female", "2", "female", "value")
+                    +form-element("toggle", "")
+                        +toggle("", "male", "2", "male", "value")
+                        +toggle("", "male", "2", "mal", "value")
+                    +form-element("like button", "")
+                        +like("2", "")
+                        +like("12", "like--active")
+                .forms__btns
+                    +form-element("range slider", "1111")
+                    +form-element("buttons", "")
+                        +btn("click me", "btn--fill btn--fill_active")
+                        +btn("click me", "btn--fill")
+                        br
+                        +btn("click me", "btn--empty btn--empty_active")
+                        +btn("click me", "btn--empty")
+                        br
+                        +btn("click me", "btn--text btn--text_active")
+                        +btn("click me", "btn--text")
+                        br
+                        +btn--pay("перейти к оплате", "btn--pay", "", "#")
+                    +form-element("pagination", "")
+                        +pagination
+                .forms__drop1
+                .forms__drop2
+                .forms__drop3
+                .forms__expandable
+                .forms__checklist
+                .forms__bulletlist
+                .forms__features
+                .forms__comment
                 
 
         script(src='./main.js')
