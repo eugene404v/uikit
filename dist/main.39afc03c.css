@@ -219,4 +219,9 @@ body {
   grid-area: comment;
 }
 
+.cards {
+  display: flex;
+  justify-content: space-between;
+}
+
 /*# sourceMappingURL=/main.39afc03c.css.map */

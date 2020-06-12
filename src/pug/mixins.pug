@@ -118,27 +118,53 @@ mixin key-value(key, value, styles)
         span.key-value__key= key
         span.key-value__value= value
 
-mixin booking(header, type, price, arrivalday, leaveday, guests, allprice-days, allprice-count, cost-descr, cost-count, upsale-descr, upsale-count, info, fullprice)
+mixin booking(header, roomtype, price, arrivalday, leaveday, guests, allpricedays, allpricecount, costdescr, costcount, upsaledescr, upsalecount, info, fullprice)
     .booking__wrapper                    
         h6.booking__header= header
-            span.booking__type= type
+            span.booking__type= roomtype
         +key-value(price, "в сутки", "booking__price")
     .booking__wrapper
         +date-dropdown("прибытие", arrivalday, "")
         +date-dropdown("выезд", leaveday, "")
     +dropdown("", guests)
     .booking__wrapper
-        span.booking__allprice-days= allprice-days
-        span.booking__allprice-count= allprice-count
+        span.booking__allprice-days= allpricedays
+        span.booking__allprice-count= allpricecount
     .booking__wrapper
-        span.booking__cost-descr= cost-descr
+        span.booking__cost-descr= costdescr
             a.booking__info(href="#" title=""+info)
-        span.booking__cost-count= cost-count
+        span.booking__cost-count= costcount
     .booking__wrapper
-        span.booking__upsale-descr= upsale-descr
+        span.booking__upsale-descr= upsaledescr
             a.booking__info(href="#" title=""+info)
-        span.booking__upsale-count= upsale-count
+        span.booking__upsale-count= upsalecount
     .booking__wrapper.booking__wrapper--sum
         h2 Итого
         h2.booking__fullprice= fullprice
     +submit("забронировать", "", "")
+
+mixin searchroom(arrivalday, leaveday, guests, styles)
+    section(class="searchroom "+styles)
+        h1.searchroom__header Найдём номера под ваши пожелания
+        .searchroom__wrapper
+            +date-dropdown("прибытие", arrivalday, "")
+            +date-dropdown("выезд", leaveday, "")
+        +dropdown("", guests)
+        +submit("подобрать номер", "", "")
+
+mixin signup(styles)
+    section(class="signup "+styles)
+        h1.signup__header Регистрация аккаунта
+        +text-field("name", "Имя", "")
+        +text-field("name", "Фамилия", "")
+        +radio("", "Мужчина", "sign", "sign1", "male")
+        +radio("", "Женщина", "sign", "sign2", "female")
+        //-mask-input
+        h3 данные для входа в сервис
+        +text-field("name", "Email", "")
+        +text-field("name", "Пароль", "")
+        +toggle("", "Получать спецпредложения", "name", "spam", "value")
+        +submit("перейти к оплате", "", "")
+        .signup__wrapper
+            span Уже есть аккаунт на Toxin
+            +btn("войти", "btn--empty btn--empty_active")
