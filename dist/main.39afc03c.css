@@ -179,4 +179,44 @@ body {
   line-height: 24px;
 }
 
+.forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "inputs checks btns" "drop1 drop2 drop3" "expandable checklist bulletlist" "features comment comment";
+}
+.forms__inputs {
+  grid-area: inputs;
+}
+.forms__checks {
+  grid-area: checks;
+}
+.forms__btns {
+  grid-area: btns;
+}
+.forms__drop1 {
+  grid-area: drop1;
+}
+.forms__drop2 {
+  grid-area: drop2;
+}
+.forms__drop3 {
+  grid-area: drop3;
+}
+.forms__expandable {
+  grid-area: expandable;
+}
+.forms__checklist {
+  grid-area: checklist;
+}
+.forms__bulletlist {
+  grid-area: bulletlist;
+}
+.forms__features {
+  grid-area: features;
+}
+.forms__comment {
+  grid-area: comment;
+}
+
 /*# sourceMappingURL=/main.39afc03c.css.map */

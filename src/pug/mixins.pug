@@ -1,3 +1,5 @@
+include ./_bulletlist.pug
+
 mixin color(name, descr, color)
     li(class='colors__li colors__li--'+color)
         dl
@@ -21,8 +23,9 @@ mixin form-element(name, descr)
 mixin text-field(name, placeholder, modifier)
     input(type="text", name=""+name, placeholder=""+placeholder, class="text-field "+modifier)
 
-mixin checkbox(check, label, name, id, value)
-    label(for=""+id).checkbox= label
+mixin checkbox(check, name, id, value)
+    label(for=""+id).checkbox
+        block
         input(type="checkbox", id=""+id, name=""+name, value=""+value, checked="#{check}")
 
 mixin radio(check, label, name, id, value)
@@ -39,8 +42,8 @@ mixin like(value, modifier)
 mixin btn(value, styles, id)
     button(class="btn "+styles, id=""+id)= value
 
-mixin btn--pay(value, styles, id, href)
-    a(href=""+href, class="btn "+styles, id=""+id)= value
+mixin submit(value, styles, id)
+    button(class="btn "+styles, id=""+id)= value
 
 mixin pagination(styles)
     div(class="pagination "+styles)
@@ -59,5 +62,83 @@ mixin pagination(styles)
                 a.pagination__link.pagination__link--last(href="#") 1111
         p.pagination__descr 1 – 12 из 100+ вариантов аренды
         
-        
-        
+mixin subscribe(styles, placeholder, name, action)
+    form(action=""+action)
+        input(type="text", name=""+name, placeholder=""+placeholder, class="subscribe "+styles)
+        input(type="submit", value="000").subscribe__btn
+
+mixin expandable(name, styles)
+    div(class="expandable "+styles)
+        h3.expandable__header= name
+        ul.expandable__list
+            block        
+
+mixin feature(name, text, styles)
+    div(class="feature "+styles)
+        h4.feature__header= name
+        p.feature__text= text
+
+mixin comments(href, name, src, ago, likes, likemodifier)
+    a(href=""+href, title=""+name)
+        img(src=""+src, alt=""+name)
+    a(href=""+href, title=""+name)= name
+    p= ago
+    +like(likes, likemodifier)
+    block
+
+mixin dropdown(styles, placeholder)
+    div(class="dropdown "+styles)= placeholder
+    .dropdown__list
+        block
+
+mixin dropdown__item(name, count, minusmod)
+    li.dropdown__item 
+    p= name
+    .dropdown__calc= count
+        button(class="dropdown__counter dropdown__counter--minus "+minusmod) -
+        button.dropdown__counter.dropdown__counter--plus +
+
+mixin date-dropdown(name, day, styles)
+    div(class="date-dropdown "+styles)
+        h3.date-dropdown__header= name
+        button.date-dropdown__btn= day
+
+mixin login(action)
+    h1.login__header Войти
+    form(action=""+action)
+        +text-field("name", "Email", "")
+        +text-field("name", "Пароль", "")
+        +submit("войти", "", "")
+        .login__footer
+            p Нет аккаунта на Toxin? 
+            +btn("создать", "btn--empty btn--empty_active")
+
+mixin key-value(key, value, styles)
+    p(class="key-value "+styles)
+        span.key-value__key= key
+        span.key-value__value= value
+
+mixin booking(header, type, price, arrivalday, leaveday, guests, allprice-days, allprice-count, cost-descr, cost-count, upsale-descr, upsale-count, info, fullprice)
+    .booking__wrapper                    
+        h6.booking__header= header
+            span.booking__type= type
+        +key-value(price, "в сутки", "booking__price")
+    .booking__wrapper
+        +date-dropdown("прибытие", arrivalday, "")
+        +date-dropdown("выезд", leaveday, "")
+    +dropdown("", guests)
+    .booking__wrapper
+        span.booking__allprice-days= allprice-days
+        span.booking__allprice-count= allprice-count
+    .booking__wrapper
+        span.booking__cost-descr= cost-descr
+            a.booking__info(href="#" title=""+info)
+        span.booking__cost-count= cost-count
+    .booking__wrapper
+        span.booking__upsale-descr= upsale-descr
+            a.booking__info(href="#" title=""+info)
+        span.booking__upsale-count= upsale-count
+    .booking__wrapper.booking__wrapper--sum
+        h2 Итого
+        h2.booking__fullprice= fullprice
+    +submit("забронировать", "", "")

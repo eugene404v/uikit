@@ -7,4 +7,48 @@
     'drop1 drop2 drop3'
     'expandable checklist bulletlist'
     'features comment comment';
+
+  &__inputs {
+    grid-area: inputs;
+  }
+
+  &__checks {
+    grid-area: checks;
+  }
+
+  &__btns {
+    grid-area: btns;
+  }
+
+  &__drop1 {
+    grid-area: drop1;
+  }
+
+  &__drop2 {
+    grid-area: drop2;
+  }
+
+  &__drop3 {
+    grid-area: drop3;
+  }
+
+  &__expandable {
+    grid-area: expandable;
+  }
+
+  &__checklist {
+    grid-area: checklist;
+  }
+
+  &__bulletlist {
+    grid-area: bulletlist;
+  }
+
+  &__features {
+    grid-area: features;
+  }
+
+  &__comment {
+    grid-area: comment;
+  }
 }
