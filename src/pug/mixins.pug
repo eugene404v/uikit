@@ -187,8 +187,8 @@ mixin header(links, logged, styles, userlink, username)
                 - for (let i=0; i<links.length; i++)
                     a(class="header__link "+links[i].styles, href=""+links[i].href, title=""+links[i].value)= links[i].value
                 if logged === "true"
-                    +btn("click me", "btn--fill header")
-                    +btn("click me", "btn--empty")
+                    +btn("войти", "btn--empty")
+                    +btn("зарегистрироваться", "btn--fill header")
                 else
                     a.header__user(href=""+userlink, title=""+username)= username
 
