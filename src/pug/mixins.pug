@@ -191,3 +191,41 @@ mixin header(links, logged, styles, userlink, username)
                     +btn("click me", "btn--empty")
                 else
                     a.header__user(href=""+userlink, title=""+username)= username
+
+mixin footercolumn(links)
+    ul
+        - for (let i=0; i<links.length; i++)
+            li
+                a(class="footer__link "+links[i].styles, href=""+links[i].href, title=""+links[i].value)= links[i].value
+
+mixin footer()
+    footer(class="footer "+styles)
+        .footer__wrapper.footer__wrapper--paddings
+            .footer__column
+                +logo("href", "title", "", "alt", "styles")
+                p Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+            .footer__column
+                h3 navigation
+                +footercolumn(footerNav)
+            .footer__column
+                h3 about us
+                +footercolumn(footerAbout)
+            .footer__column
+                h3 support
+                +footercolumn(footerSupport)
+            .footer__column
+                h3 Subscribe to our newsletter
+                p Receive our latest news and promotions in your inbox!
+                +subscribe("footer__subscribe", "Your email address", "name", "action")
+        .footer__bottom
+            .footer__wrapper
+                p Copyright © 2018 Toxin UI Kit. All rights reserved.
+                ul.footer__socials
+                    li
+                        a.footer__soclink.footer__soclink--twitter(href="#", target="_blank", title="twitter")
+                    li
+                        a.footer__soclink.footer__soclink--fb(href="#", target="_blank", title="facebook")
+                    li
+                        a.footer__soclink.footer__soclink--inst(href="#", target="_blank", title="instagram")
+
+
