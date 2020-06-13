@@ -1,0 +1,48 @@
+include pug/mixins.pug
+- 
+          var headerlinks = [
+            { "value": "Home", "href": '#', "styles": 'header__link--active' },
+            { "value": "About Us", "href": '#', "styles": '' },
+            { "value": "Services", "href": '#', "styles": 'header__link--dropdown' },
+            { "value": "Careers", "href": '#', "styles": '' },
+            { "value": "News", "href": '#', "styles": '' },
+            { "value": "Documentation", "href": '#', "styles": '' }
+          ]
+
+- 
+          var footerNav = [
+            { "value": "About Us", "href": '#'},
+            { "value": "News", "href": '#'},
+            { "value": "Support", "href": '#'},
+            { "value": "Products", "href": '#'}
+          ]
+
+- 
+          var footerAbout = [
+            { "value": "Who we are", "href": '#'},
+            { "value": "Our team", "href": '#'},
+            { "value": "Careers", "href": '#'},
+            { "value": "Investors", "href": '#'}
+          ]
+
+- 
+          var footerSupport = [
+            { "value": "Documentation", "href": '#'},
+            { "value": "Community", "href": '#'},
+            { "value": "Get in Touch", "href": '#'}
+          ]
+
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Landing page
+        link(rel="stylesheet", href="main.scss")
+    body
+      +header(headerlinks, "true", "styles", "", "")
+      main.sign
+        +login("action", "styles")
+        +signup("action", "styles")
+      +footer(footerNav, footerAbout, footerSupport, "styles")
