@@ -168,3 +168,26 @@ mixin signup(styles)
         .signup__wrapper
             span Уже есть аккаунт на Toxin
             +btn("войти", "btn--empty btn--empty_active")
+
+//-**********************************************************
+//-**********************************************************
+//-HEADERS
+//-**********************************************************
+//-**********************************************************
+
+mixin logo(href, title, src, alt, styles)
+    a(class="logo "+styles, href=""+href, title=""+title)
+        img(src=""+src, alt=""+alt)
+
+mixin header(links, logged, styles, userlink, username)
+    header(class="header "+styles)
+        .header__wrapper
+            +logo("href", "title", "", "alt", "styles")
+            nav.header__nav
+                - for (let i=0; i<links.length; i++)
+                    a(class="header__link "+links[i].styles, href=""+links[i].href, title=""+links[i].value)= links[i].value
+                if logged === "true"
+                    +btn("click me", "btn--fill header")
+                    +btn("click me", "btn--empty")
+                else
+                    a.header__user(href=""+userlink, title=""+username)= username

@@ -1,0 +1,25 @@
+include pug/mixins.pug
+- 
+          var headerlinks = [
+            { "value": "Home", "href": '#', "styles": 'header__link--active' },
+            { "value": "About Us", "href": '#', "styles": '' },
+            { "value": "Services", "href": '#', "styles": 'header__link--dropdown' },
+            { "value": "Careers", "href": '#', "styles": '' },
+            { "value": "News", "href": '#', "styles": '' },
+            { "value": "Documentation", "href": '#', "styles": '' }
+          ]
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Headers
+        link(rel="stylesheet", href="main.scss")
+    body
+        main.ui-kit.ui-kit--dark
+
+          
+
+          +header(headerlinks, "true", "styles", "", "")
+          +header(headerlinks, "false", "styles", "#", "Cosmin Negoita")
