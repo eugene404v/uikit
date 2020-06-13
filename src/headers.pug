@@ -8,6 +8,29 @@ include pug/mixins.pug
             { "value": "News", "href": '#', "styles": '' },
             { "value": "Documentation", "href": '#', "styles": '' }
           ]
+
+- 
+          var footerNav = [
+            { "value": "About Us", "href": '#'},
+            { "value": "News", "href": '#'},
+            { "value": "Support", "href": '#'},
+            { "value": "Products", "href": '#'}
+          ]
+
+- 
+          var footerAbout = [
+            { "value": "Who we are", "href": '#'},
+            { "value": "Our team", "href": '#'},
+            { "value": "Careers", "href": '#'},
+            { "value": "Investors", "href": '#'}
+          ]
+
+- 
+          var footerSupport = [
+            { "value": "Documentation", "href": '#'},
+            { "value": "Community", "href": '#'},
+            { "value": "Get in Touch", "href": '#'}
+          ]
 <!DOCTYPE html>
 html(lang="en")
     head
@@ -20,3 +43,5 @@ html(lang="en")
         main.ui-kit.ui-kit--dark
           +header(headerlinks, "true", "styles", "", "")
           +header(headerlinks, "false", "styles", "#", "Cosmin Negoita")
+          +footer(footerNav, footerAbout, footerSupport, "styles")
+          +copyright("styles")

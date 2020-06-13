@@ -196,9 +196,19 @@ mixin footercolumn(links)
     ul
         - for (let i=0; i<links.length; i++)
             li
-                a(class="footer__link "+links[i].styles, href=""+links[i].href, title=""+links[i].value)= links[i].value
+                a(class="footer__link", href=""+links[i].href, title=""+links[i].value)= links[i].value
 
-mixin footer()
+                
+mixin socials()
+    ul.socials__list
+        li
+            a.social__link.social__link--twitter(href="#", target="_blank", title="twitter")
+        li
+            a.social__link.social__link--fb(href="#", target="_blank", title="facebook")
+        li
+            a.social__link.social__link--inst(href="#", target="_blank", title="instagram")                
+
+mixin footer(footerNav, footerAbout, footerSupport, styles)
     footer(class="footer "+styles)
         .footer__wrapper.footer__wrapper--paddings
             .footer__column
@@ -220,12 +230,12 @@ mixin footer()
         .footer__bottom
             .footer__wrapper
                 p Copyright © 2018 Toxin UI Kit. All rights reserved.
-                ul.footer__socials
-                    li
-                        a.footer__soclink.footer__soclink--twitter(href="#", target="_blank", title="twitter")
-                    li
-                        a.footer__soclink.footer__soclink--fb(href="#", target="_blank", title="facebook")
-                    li
-                        a.footer__soclink.footer__soclink--inst(href="#", target="_blank", title="instagram")
+                +socials()
+
+mixin copyright(styles)
+    footer(class="copyright "+styles)
+        +logo("href", "title", "", "alt", "styles")
+        p Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+        +socials()
 
 
