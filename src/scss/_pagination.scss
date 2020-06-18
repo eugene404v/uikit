@@ -1,0 +1,30 @@
+.pagination {
+  &__list {
+    display: flex;
+  }
+
+  &__link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    color: $dark-50;
+
+    &--active {
+      background: $gradient;
+      color: white;
+    }
+
+    &--last {
+      background: $gradient-light;
+    }
+  }
+
+}

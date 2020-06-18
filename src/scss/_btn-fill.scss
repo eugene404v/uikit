@@ -1,0 +1,18 @@
+.btn-fill {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 22px;
+  min-width: 100px;
+  padding: 15px 20px 15px 20px;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: white;
+  text-transform: uppercase;
+
+  &:disabled,
+  &--disabled {
+    opacity: 0.5;
+  }
+}

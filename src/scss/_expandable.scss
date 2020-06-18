@@ -1,0 +1,11 @@
+.expandable {
+  width: 320px;
+
+  &__header {
+    cursor: pointer;
+
+    &--closed {
+      background-color: red;
+    }
+  }
+}

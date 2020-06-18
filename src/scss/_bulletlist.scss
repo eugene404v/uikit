@@ -1,0 +1,18 @@
+.bulletlist {
+  &__item {
+    padding-left: 20px;
+    position: relative;
+    padding-top: 10px;
+
+    &:before {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      content: "";
+      border-radius: 50%;
+      background-color: $dark-25;
+      top: 15px;
+      left: 0;
+    }
+  }
+}

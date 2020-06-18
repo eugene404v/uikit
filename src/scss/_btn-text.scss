@@ -1,0 +1,13 @@
+.btn-text {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $dark-50;
+
+  &:disabled,
+  &--disabled {
+    color: $purple;
+  }
+}

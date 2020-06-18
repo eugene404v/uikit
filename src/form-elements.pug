@@ -37,8 +37,8 @@ html(lang="en")
                         +radio("", "male", "2", "maler", "value")
                         +radio("", "female", "2", "female", "value")
                     +form-element("toggle", "")
-                        +toggle("", "male", "2", "male", "value")
-                        +toggle("", "male", "2", "mal", "value")
+                        +toggle("", "Получать спецпредложения", "2", "male", "value")
+                        +toggle("", "Получать спецпредложения", "2", "mal", "value")
                     +form-element("like button", "")
                         +like("2", "")
                         +like("12", "like--active")
@@ -48,16 +48,17 @@ html(lang="en")
                     +form-element("range slider", "1111")
                         //-SLIDER***************************************
                     +form-element("buttons", "")
-                        +btn("click me", "btn--fill")
-                        +btn("click me", "btn--fill btn--fill_disabled")
-                        br
-                        +btn("click me", "btn--empty")
-                        +btn("click me", "btn--empty btn--empty_disabled")
-                        br
-                        +btn("click me", "btn--text")
-                        +btn("click me", "btn--text btn--text_disabled")
-                        br
-                        +submit("перейти к оплате", "btn--submit", "", "#")
+                        .forms__wrap-btns
+                            +btn("click me", "btn-fill")
+                            +btn("click me", "btn-fill btn-fill--disabled")
+                        .forms__wrap-btns
+                            +btn("click me", "btn-empty")
+                            +btn("click me", "btn-empty btn-empty--disabled")
+                        .forms__wrap-btns.forms__wrap-btns--text
+                            +btn("click me", "btn-text btn-text--disabled")
+                            +btn("click me", "btn-text")
+                        .forms__wrap-btns.forms__wrap-btns--submit
+                            +submit("перейти к оплате", "btn-submit", "", "#")
                     +form-element("pagination", "")
                         +pagination
                 .forms__drop1
@@ -76,7 +77,9 @@ html(lang="en")
                                 +dropdown__item("взрослые", "0", "dropdown__counter--empty")
                                 +dropdown__item("дети", "0", "dropdown__counter--empty")
                                 +dropdown__item("младенцы", "0", "dropdown__counter--empty")
-                            button.dropdown__submit применить
+                            .dropdown__btns-wrapper
+                                button.dropdown__reset.dropdown__reset--hidden.btn-text.btn-text--disabled очистить
+                                button.dropdown__submit.btn-text применить
                 .forms__drop3
                     +form-element("dropdown", "")
                         +dropdown("", "3 гостя")
@@ -84,8 +87,9 @@ html(lang="en")
                                 +dropdown__item("взрослые", "2")
                                 +dropdown__item("дети", "1")
                                 +dropdown__item("младенцы", "0", "dropdown__counter--empty")
-                            button.dropdown__reset очистить
-                            button.dropdown__submit применить
+                            .dropdown__btns-wrapper
+                                button.dropdown__reset.btn-text.btn-text--disabled очистить
+                                button.dropdown__submit.btn-text применить
                 .forms__expandable
                     +expandable("expandable checkbox list", "expandable--closed")
                     +expandable("expandable checkbox list")
@@ -119,7 +123,8 @@ html(lang="en")
                     +feature("Комфорт", "Шумопоглощающие стены", "feature--comfort")
                     +feature("Удобство", "Окно в каждой из спален", "feature--window")
                 .forms__comment
-                    +comments("#", "Мурад Сарафанов", "", "5 days", "12", "like--active")
+                    +comments("#", "Мурад Сарафанов", "", "5 дней назад", "12", "like--active")
+                        p Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
 
                 
 

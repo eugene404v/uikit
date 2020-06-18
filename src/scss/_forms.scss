@@ -7,48 +7,94 @@
     'drop1 drop2 drop3'
     'expandable checklist bulletlist'
     'features comment comment';
+  max-width: 1160px;
+  margin: 0 auto;
+  margin-bottom: 130px;
 
   &__inputs {
     grid-area: inputs;
+    max-width: 320px;
   }
 
   &__checks {
     grid-area: checks;
+    max-width: 320px;
   }
 
   &__btns {
     grid-area: btns;
+    max-width: 320px;
   }
 
   &__drop1 {
     grid-area: drop1;
+    max-width: 320px;
   }
 
   &__drop2 {
     grid-area: drop2;
+    max-width: 320px;
   }
 
   &__drop3 {
     grid-area: drop3;
+    max-width: 320px;
   }
 
   &__expandable {
     grid-area: expandable;
+    max-width: 320px;
   }
 
   &__checklist {
     grid-area: checklist;
+    max-width: 320px;
   }
 
   &__bulletlist {
     grid-area: bulletlist;
+    max-width: 320px;
   }
 
   &__features {
     grid-area: features;
+    max-width: 320px;
   }
 
   &__comment {
     grid-area: comment;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__name {
+    @include h3;
+  }
+
+  &__descr {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark-50;
+  }
+
+  &__wrap-btns {
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+
+    &--text {
+      width: 140px;
+    }
+
+    &--submit {
+      width: 320px;
+    }
   }
 }

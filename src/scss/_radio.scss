@@ -1,0 +1,48 @@
+.radio {
+  color: $dark-50;
+  max-width: 230px;
+  padding-left: 30px;
+  margin-right: 20px;
+  position: relative;
+  color: $dark-50;
+
+  &__input {
+    display: none;
+
+    &:checked + .radio {
+      color: $dark-75;
+    }
+
+    &:checked + .radio:before {
+      border-color: $purple;
+    }
+
+    &:checked + .radio:after {
+      background: $gradient;
+      left: 4px;
+    }
+  }
+
+  &:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid $dark-25;
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background: none;
+    border-radius: 50%;
+  }
+}

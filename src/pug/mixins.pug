@@ -17,24 +17,28 @@ mixin form-element(name, descr)
     div
         dl.forms__container
             dt.forms__name= name
-            dd.forms__descr= descr
+            if descr
+                dd.forms__descr= descr
         block
 
 mixin text-field(name, placeholder, modifier)
     input(type="text", name=""+name, placeholder=""+placeholder, class="text-field "+modifier)
 
 mixin checkbox(check, name, id, value)
+    input.checkbox__input(type="checkbox", id=""+id, name=""+name, value=""+value)
     label(for=""+id).checkbox
         block
-        input(type="checkbox", id=""+id, name=""+name, value=""+value, checked="#{check}")
+        
 
 mixin radio(check, label, name, id, value)
+    input.radio__input(type="radio", id=""+id, name=""+name, value=""+value)
     label(for=""+id).radio= label
-        input(type="radio", id=""+id, name=""+name, value=""+value, checked="#{check}")
+    
 
 mixin toggle(check, label, name, id, value)
+    input.toggle__input(type="checkbox", id=""+id, name=""+name, value=""+value)
     label(for=""+id).toggle= label
-        input(type="checkbox", id=""+id, name=""+name, value=""+value, checked="#{check}")
+    
 
 mixin like(value, modifier)
     button(class="like "+modifier)= value
@@ -43,29 +47,35 @@ mixin btn(value, styles, id)
     button(class="btn "+styles, id=""+id)= value
 
 mixin submit(value, styles, id)
-    button(class="btn "+styles, id=""+id)= value
+    button(class="btn "+styles, id=""+id)
+        span.btn-submit__title= value
 
 mixin pagination(styles)
     div(class="pagination "+styles)
-        ul
-            li
-                a.pagination__link.pagination__link--active(href="#") 1
-            li
-                a.pagination__link(href="#") 2
-            li
-                a.pagination__link(href="#") 3
-            li
+        ul.pagination__list
+            li.pagination__item
+                a.pagination__link.pagination__link--active(href="#") 
+                    span 1
+            li.pagination__item
+                a.pagination__link(href="#") 
+                    span 2
+            li.pagination__item
+                a.pagination__link(href="#") 
+                    span 3
+            li.pagination__item.pagination__link
                 p ...
-            li
-                a.pagination__link(href="#") 15
-            li
-                a.pagination__link.pagination__link--last(href="#") 1111
+            li.pagination__item
+                a.pagination__link(href="#") 
+                    span 15
+            li.pagination__item
+                a.pagination__link.pagination__link--last(href="#") 
         p.pagination__descr 1 – 12 из 100+ вариантов аренды
         
 mixin subscribe(styles, placeholder, name, action)
-    form(action=""+action)
-        input(type="text", name=""+name, placeholder=""+placeholder, class="subscribe "+styles)
-        input(type="submit", value="000").subscribe__btn
+    div(class="subscribe "+styles)    
+        form(action=""+action)
+            input.subscribe__input(type="text", name=""+name, placeholder=""+placeholder)
+            input.subscribe__submit(type="submit", value="000")
 
 mixin expandable(name, styles)
     div(class="expandable "+styles)
@@ -78,40 +88,45 @@ mixin feature(name, text, styles)
         h4.feature__header= name
         p.feature__text= text
 
-mixin comments(href, name, src, ago, likes, likemodifier)
-    a(href=""+href, title=""+name)
-        img(src=""+src, alt=""+name)
-    a(href=""+href, title=""+name)= name
-    p= ago
-    +like(likes, likemodifier)
-    block
+mixin comments(href, name, src, ago, likes, likemodifier, styles)
+    section(class="comment "+styles)
+        .comment__column
+            a(href=""+href, title=""+name)
+                img(src=""+src, alt=""+name).comment__photo
+            +like(likes, likemodifier)
+        .comment__column
+            a(href=""+href, title=""+name).comment__name= name
+            p= ago
+            block
 
 mixin dropdown(styles, placeholder)
-    div(class="dropdown "+styles)= placeholder
-    .dropdown__list
-        block
+    section(class="dropdown "+styles)
+        input.dropdown__input(type="text", placeholder=""+placeholder, disabled) 
+        .dropdown__content    
+            block
 
 mixin dropdown__item(name, count, minusmod)
     li.dropdown__item 
-    p= name
-    .dropdown__calc= count
-        button(class="dropdown__counter dropdown__counter--minus "+minusmod) -
-        button.dropdown__counter.dropdown__counter--plus +
+        p= name
+        .dropdown__calc= count
+            button(class="dropdown__counter dropdown__counter--minus "+minusmod) -
+            button.dropdown__counter.dropdown__counter--plus +
 
 mixin date-dropdown(name, day, styles)
     div(class="date-dropdown "+styles)
         h3.date-dropdown__header= name
         button.date-dropdown__btn= day
 
-mixin login(action)
-    h1.login__header Войти
-    form(action=""+action)
-        +text-field("name", "Email", "")
-        +text-field("name", "Пароль", "")
-        +submit("войти", "", "")
-        .login__footer
-            p Нет аккаунта на Toxin? 
-            +btn("создать", "btn--empty btn--empty_active")
+mixin login(action, styles)
+    section(class="login "+styles)
+        h1.login__header Войти
+        form(action=""+action)
+            +text-field("name", "Email", "")
+            +text-field("name", "Пароль", "")
+            +submit("войти", "", "")
+            .login__footer
+                p Нет аккаунта на Toxin? 
+                +btn("создать", "btn--empty btn--empty_active")
 
 mixin key-value(key, value, styles)
     p(class="key-value "+styles)
@@ -152,22 +167,23 @@ mixin searchroom(arrivalday, leaveday, guests, styles)
         +dropdown("", guests)
         +submit("подобрать номер", "", "")
 
-mixin signup(styles)
+mixin signup(action, styles)
     section(class="signup "+styles)
         h1.signup__header Регистрация аккаунта
-        +text-field("name", "Имя", "")
-        +text-field("name", "Фамилия", "")
-        +radio("", "Мужчина", "sign", "sign1", "male")
-        +radio("", "Женщина", "sign", "sign2", "female")
-        //-mask-input
-        h3 данные для входа в сервис
-        +text-field("name", "Email", "")
-        +text-field("name", "Пароль", "")
-        +toggle("", "Получать спецпредложения", "name", "spam", "value")
-        +submit("перейти к оплате", "", "")
-        .signup__wrapper
-            span Уже есть аккаунт на Toxin
-            +btn("войти", "btn--empty btn--empty_active")
+        form(action=""+action )
+            +text-field("name", "Имя", "")
+            +text-field("name", "Фамилия", "")
+            +radio("", "Мужчина", "sign", "sign1", "male")
+            +radio("", "Женщина", "sign", "sign2", "female")
+            //-mask-input
+            h3 данные для входа в сервис
+            +text-field("name", "Email", "")
+            +text-field("name", "Пароль", "")
+            +toggle("", "Получать спецпредложения", "name", "spam", "value")
+            +submit("перейти к оплате", "", "")
+            .signup__wrapper
+                span Уже есть аккаунт на Toxin
+                +btn("войти", "btn--empty btn--empty_active")
 
 //-**********************************************************
 //-**********************************************************
@@ -187,8 +203,8 @@ mixin header(links, logged, styles, userlink, username)
                 - for (let i=0; i<links.length; i++)
                     a(class="header__link "+links[i].styles, href=""+links[i].href, title=""+links[i].value)= links[i].value
                 if logged === "true"
-                    +btn("войти", "btn--empty")
-                    +btn("зарегистрироваться", "btn--fill header")
+                    +btn("войти", "btn--empty btn--login")
+                    +btn("зарегистрироваться", "btn--fill btn--signup")
                 else
                     a.header__user(href=""+userlink, title=""+username)= username
 

@@ -1,0 +1,19 @@
+.like {
+  border: 1px solid $dark-25;
+  box-sizing: border-box;
+  border-radius: 10px;
+  min-width: 40px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: $dark-25;
+  padding: 4px 10px 4px 20px;
+  text-align: center;
+
+  &--active,
+  &:hover {
+    border-color: $purple;
+    color: $purple;
+  }
+}

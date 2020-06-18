@@ -43,6 +43,6 @@ html(lang="en")
     body
       +header(headerlinks, "true", "styles", "", "")
       main.sign
-        +login("action", "styles")
-        +signup("action", "styles")
+        +login("action", "sign__login sign__login--closed")
+        +signup("action", "sign__signup sign__signup--closed")
       +footer(footerNav, footerAbout, footerSupport, "styles")

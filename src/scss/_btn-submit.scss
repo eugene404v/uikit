@@ -1,0 +1,16 @@
+.btn-submit {
+  width: 100%;
+  background: $gradient;
+  padding: 14px 20px 15px 20px;
+  border-radius: 22px;
+
+  &__title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+  }
+}

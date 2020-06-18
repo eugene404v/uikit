@@ -1,0 +1,14 @@
+.feature {
+  border-bottom: 1px solid $dark-10;
+  padding-left: 58px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+
+  &__header {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}

@@ -1,0 +1,24 @@
+.text-field {
+  width: 100%;
+  border: 1px solid $dark-25;
+  border-radius: 4px;
+  padding: 15px;
+  outline: none;
+  color: $dark-75;
+  height: 44px;
+
+  &--active,
+  :hover,
+  :active {
+    border: 1px solid $dark-50;
+  }
+
+  &::placeholder {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark-25;
+  }
+}

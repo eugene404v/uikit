@@ -1,0 +1,27 @@
+.checkbox {
+  display: block;
+  color: $dark-50;
+  max-width: 230px;
+  padding-left: 30px;
+  position: relative;
+
+  &__input {
+    display: none;
+
+    &:checked + .checkbox:before {
+      background-color: red;
+    }
+  }
+
+  &:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border: 1px solid $dark-25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
