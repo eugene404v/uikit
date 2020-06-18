@@ -1,0 +1,46 @@
+.header {
+  background: white;
+  box-shadow: 0px 10px 20px $dark-5;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include section-wrapper(1160px);
+    min-height: 70px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 770px;
+  }
+
+  &__link {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: $dark-50;
+
+    &--active {
+      color: $dark-75;
+      font-weight: bold;
+    }
+
+    &--dropdown {
+      background-color: red;
+    }
+  }
+
+  &__user {
+    padding-left: 20px;
+    border-left: 1px solid $dark-10;
+    font-size: 14px;
+    line-height: 17px;
+    color: $dark-50;
+    height: 30px;
+    padding-top: 6px;
+  }
+}

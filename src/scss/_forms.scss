@@ -97,4 +97,9 @@
       width: 320px;
     }
   }
+
+  &__date-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
 }

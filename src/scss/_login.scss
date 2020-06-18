@@ -1,0 +1,22 @@
+.login {
+  max-width: 380px;
+  @include card-border;
+
+  &__header, &__password {
+    margin-bottom: 20px;
+  }
+
+  &__email {
+    margin-bottom: 10px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__submit {
+    margin-bottom: 30px;
+  }
+}

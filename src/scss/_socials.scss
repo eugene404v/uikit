@@ -1,0 +1,11 @@
+.socials {
+  display: flex;
+  justify-content: space-between;
+  width: 112px;
+
+  &__link {
+    height: 24px;
+    width: 24px;
+    background-color: red;
+  }
+}

@@ -357,6 +357,7 @@ a {
   text-decoration: none;
   display: block;
   box-sizing: border-box;
+  color: rgba(31, 32, 65, 0.75);
 }
 a:hover {
   text-decoration: none;
@@ -630,6 +631,10 @@ button {
 }
 .forms__wrap-btns--submit {
   width: 320px;
+}
+.forms__date-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .cards {
@@ -950,19 +955,29 @@ button {
 
 .dropdown__input {
   background-color: white;
-  border: 1px solid rgba(31, 32, 65, 0.25);
+  border: 1px solid rgba(31, 32, 65, 0.5);
   box-sizing: border-box;
-  border-radius: 4px;
+  border-radius: 4px 4px 0 0;
   height: 44px;
   width: 100%;
   padding-left: 15px;
 }
 .dropdown__content {
   border: 1px solid rgba(31, 32, 65, 0.5);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 7px 7px 13px 13px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1F2041;
 }
 .dropdown__item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
 }
 .dropdown__btns-wrapper {
   display: flex;
@@ -970,6 +985,280 @@ button {
 }
 .dropdown__reset--hidden {
   visibility: hidden;
+}
+.dropdown--closed .dropdown__content {
+  display: none;
+}
+.dropdown--closed .dropdown__input {
+  border-color: rgba(31, 32, 65, 0.25);
+  border-radius: 4px 4px 4px 4px;
+}
+.dropdown__calc {
+  width: 92px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown__counter {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  box-sizing: border-box;
+  border-radius: 50%;
+  color: rgba(31, 32, 65, 0.5);
+}
+.dropdown__counter--empty {
+  border-color: rgba(31, 32, 65, 0.25);
+  color: rgba(31, 32, 65, 0.25);
+}
+
+.date-dropdown__btn {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+  height: 44px;
+  width: 150px;
+  padding-left: 15px;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.75);
+  text-align: left;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-between;
+  width: 112px;
+}
+.socials__link {
+  height: 24px;
+  width: 24px;
+  background-color: red;
+}
+
+.login {
+  max-width: 380px;
+  background-color: white;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 40px 30px 30px 30px;
+}
+.login__header, .login__password {
+  margin-bottom: 20px;
+}
+.login__email {
+  margin-bottom: 10px;
+}
+.login__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login__submit {
+  margin-bottom: 30px;
+}
+
+.booking {
+  background-color: white;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 40px 30px 30px 30px;
+}
+.booking__wrapper {
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.booking__wrapper--sum {
+  margin-top: 30px;
+}
+.booking__wrapper--calc {
+  margin-bottom: 10px;
+}
+.booking__header {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 17px;
+  color: #1F2041;
+}
+.booking__type {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #BC9CFF;
+}
+.booking__price {
+  color: rgba(31, 32, 65, 0.5);
+}
+.booking__price-count {
+  font-weight: bold;
+}
+.booking__guests {
+  margin-bottom: 20px;
+}
+.booking__cost-descr, .booking__upsale-descr {
+  position: relative;
+}
+.booking__info {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.searchroom {
+  background-color: white;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 40px 30px 30px 30px;
+  max-width: 380px;
+}
+.searchroom__wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 320px;
+  margin: 20px 0;
+}
+.searchroom__guests {
+  margin-bottom: 30px;
+}
+
+.signup {
+  background-color: white;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 40px 30px 30px 30px;
+  max-width: 380px;
+}
+.signup__header {
+  margin-bottom: 20px;
+}
+.signup__name, .signup__surname, .signup__email, .signup__password {
+  margin-bottom: 10px;
+}
+.signup__subheader {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.signup__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.signup__submit {
+  margin-top: 24px;
+  margin-bottom: 30px;
+}
+
+.header {
+  background: white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+}
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1160px;
+  margin: 0 auto;
+  min-height: 70px;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 770px;
+}
+.header__link {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.header__link--active {
+  color: rgba(31, 32, 65, 0.75);
+  font-weight: bold;
+}
+.header__link--dropdown {
+  background-color: red;
+}
+.header__user {
+  padding-left: 20px;
+  border-left: 1px solid rgba(31, 32, 65, 0.1);
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.5);
+  height: 30px;
+  padding-top: 6px;
+}
+
+.footer {
+  background-color: white;
+  box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+}
+.footer__wrapper {
+  width: 1160px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__wrapper--paddings {
+  padding: 100px 0 80px 0;
+}
+.footer__column--wide {
+  max-width: 260px;
+}
+.footer__logo {
+  margin-bottom: 20px;
+}
+.footer__title {
+  margin-bottom: 20px;
+}
+.footer__text {
+  margin-bottom: 20px;
+}
+.footer__link {
+  color: rgba(31, 32, 65, 0.5);
+  margin-bottom: 20px;
+}
+.footer__bottom {
+  border-top: 1px solid rgba(31, 32, 65, 0.1);
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.copyright {
+  padding: 120px 100px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  max-width: 768px;
+  margin: 0 auto;
+}
+.copyright__text {
+  margin-top: 20px;
+  margin-bottom: 25px;
 }
 
 /*# sourceMappingURL=/main.1f19ae8e.css.map */
