@@ -1,0 +1,13 @@
+mixin dropdown(styles, placeholder)
+  section(class="dropdown "+styles)
+    input.dropdown__input(type="text" placeholder=""+placeholder, disabled) 
+    .dropdown__content    
+      block
+
+mixin dropdown__item(name, count, minusmod)
+  li.dropdown__item 
+    p= name
+    .dropdown__calc
+      button(class="dropdown__counter dropdown__counter--minus "+minusmod) -
+      p.dropdown__count= count
+      button.dropdown__counter.dropdown__counter--plus +

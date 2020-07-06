@@ -1,111 +1,16 @@
 include ./_bulletlist.pug
 
 
+       
 
-mixin form-element(name, descr)
-    div
-        dl.forms__container
-            dt.forms__name= name
-            if descr
-                dd.forms__descr= descr
-        block
 
-mixin text-field(name, placeholder, modifier)
-    input(type="text", name=""+name, placeholder=""+placeholder, class="text-field "+modifier)
 
-mixin checkbox(check, name, id, value)
-    input.checkbox__input(type="checkbox", id=""+id, name=""+name, value=""+value)
-    label(for=""+id).checkbox
-        block
-        
 
-mixin radio(check, label, name, id, value)
-    input.radio__input(type="radio", id=""+id, name=""+name, value=""+value)
-    label(for=""+id).radio= label
-    
 
-mixin toggle(check, label, name, id, value)
-    input.toggle__input(type="checkbox", id=""+id, name=""+name, value=""+value)
-    label(for=""+id).toggle= label
-    
 
-mixin like(value, modifier)
-    button(class="like "+modifier)= value
 
-mixin btn(value, styles, id)
-    button(class="btn "+styles, id=""+id)= value
 
-mixin submit(value, styles, id)
-    button(class="btn-submit "+styles, id=""+id)
-        span.btn-submit__title= value
 
-mixin pagination(styles)
-    div(class="pagination "+styles)
-        ul.pagination__list
-            li.pagination__item
-                a.pagination__link.pagination__link--active(href="#") 
-                    span 1
-            li.pagination__item
-                a.pagination__link(href="#") 
-                    span 2
-            li.pagination__item
-                a.pagination__link(href="#") 
-                    span 3
-            li.pagination__item.pagination__link
-                p ...
-            li.pagination__item
-                a.pagination__link(href="#") 
-                    span 15
-            li.pagination__item
-                a.pagination__link.pagination__link--last(href="#") 
-        p.pagination__descr 1 – 12 из 100+ вариантов аренды
-        
-mixin subscribe(styles, placeholder, name, action)
-    div(class="subscribe "+styles)    
-        form(action=""+action)
-            input.subscribe__input(type="text", name=""+name, placeholder=""+placeholder)
-            input.subscribe__submit(type="submit", value="000")
-
-mixin expandable(name, styles)
-    div(class="expandable "+styles)
-        h3.expandable__header= name
-        ul.expandable__list
-            block        
-
-mixin feature(name, text, styles)
-    div(class="feature "+styles)
-        h4.feature__header= name
-        p.feature__text= text
-
-mixin comments(href, name, src, ago, likes, likemodifier, styles)
-    section(class="comment "+styles)
-        .comment__column
-            a(href=""+href, title=""+name)
-                img(src=""+src, alt=""+name).comment__photo
-            +like(likes, likemodifier)
-        .comment__column
-            a(href=""+href, title=""+name).comment__name= name
-            p= ago
-            block
-
-mixin dropdown(styles, placeholder)
-    section(class="dropdown "+styles)
-        input.dropdown__input(type="text", placeholder=""+placeholder, disabled) 
-        .dropdown__content    
-            block
-
-mixin dropdown__item(name, count, minusmod)
-    li.dropdown__item 
-        p= name
-        .dropdown__calc
-            button(class="dropdown__counter dropdown__counter--minus "+minusmod) -
-            p.dropdown__count= count
-            button.dropdown__counter.dropdown__counter--plus +
-
-mixin date-dropdown(name, day, styles)
-    div(class="date-dropdown "+styles)
-        h3.date-dropdown__header= name
-        button.date-dropdown__btn= day
 
 mixin login(action, styles)
     section(class="login "+styles)
@@ -118,7 +23,7 @@ mixin login(action, styles)
                 p Нет аккаунта на Toxin? 
                 +btn("создать", "btn-empty")
 
-    
+
 
 mixin booking(header, roomtype, price, arrivalday, leaveday, guests, allpricedays, allpricecount, costdescr, costcount, upsaledescr, upsalecount, info, fullprice)
     section.booking
@@ -204,17 +109,17 @@ mixin footercolumn(links)
     ul
         - for (let i=0; i<links.length; i++)
             li
-                a(class="footer__link", href=""+links[i].href, title=""+links[i].value)= links[i].value
+                a(class="footer__link" href=""+links[i].href, title=""+links[i].value)= links[i].value
 
-                
+
 mixin socials()
     ul.socials
         li
-            a.socials__link.socials__link--twitter(href="#", target="_blank", title="twitter")
+            a.socials__link.socials__link--twitter(href="#" target="_blank" title="twitter")
         li
-            a.socials__link.socials__link--fb(href="#", target="_blank", title="facebook")
+            a.socials__link.socials__link--fb(href="#" target="_blank" title="facebook")
         li
-            a.socials__link.socials__link--inst(href="#", target="_blank", title="instagram")                
+            a.socials__link.socials__link--inst(href="#" target="_blank" title="instagram")                
 
 mixin footer(footerNav, footerAbout, footerSupport, styles)
     footer(class="footer "+styles)

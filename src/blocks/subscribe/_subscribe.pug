@@ -1,0 +1,5 @@
+mixin subscribe(styles, placeholder, name, action)
+  div(class="subscribe "+styles)    
+    form(action=""+action)
+      input.subscribe__input(type="text" name=""+name, placeholder=""+placeholder)
+      input.subscribe__submit(type="submit" value="000")

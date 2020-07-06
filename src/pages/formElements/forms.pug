@@ -1,0 +1,12 @@
+extends ../../templates/template.pug
+include ../../blocks/uiKit/_uiKit.pug
+
+
+block title 
+  title Form elements
+
+block content
+  +uiKit("")
+    include ../../blocks/forms/_forms.pug
+block scripts
+  script(src="./forms.js")
