@@ -638,6 +638,8 @@ button {
 }
 
 .cards {
+  width: 1160px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }

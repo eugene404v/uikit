@@ -1,4 +1,5 @@
 .cards {
+  @include section-wrapper;
   display: flex;
   justify-content: space-between;
 }

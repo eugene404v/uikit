@@ -1,0 +1,12 @@
+extends ../../templates/template.pug
+include ../../blocks/uiKit/_uiKit.pug
+
+
+block title 
+  title Colors&Types
+
+block content
+  +uiKit("")
+    include ../../blocks/colorsTypes/_colorsTypes.pug
+block scripts
+  script(src="./colors.js")

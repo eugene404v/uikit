@@ -1,0 +1,121 @@
+@import '../../common/_common.scss';
+@import '../../blocks/uiKit/_uiKit.scss';
+
+.colors-types {
+  display: flex;
+  justify-content: space-between;
+  padding: 145px 190px 145px 150px;
+}
+
+.colors {
+  &__li {
+      padding-left: 110px;
+      padding-bottom: 33px;
+      position: relative;
+
+      &::before {
+          position: absolute;
+          content: "";
+          left: 0;
+          top: 0;
+          width: 70px;
+          height: 70px;
+          background-color: red;
+          border-radius: 6px;
+      }
+
+      &--dark100::before {
+          background-color: $dark-100;
+      }
+
+      &--dark75::before {
+          background-color: $dark-75;
+      }
+
+      &--dark50::before {
+          background-color: $dark-50;
+      }
+
+      &--dark25::before {
+          background-color: $dark-25;
+      }
+
+      &--dark5::before {
+          background-color: $dark-5;
+      }
+
+      &--purple::before {
+          background-color: $purple;
+      }
+
+      &--green::before {
+          background-color: $green;
+      }
+  }
+
+  &__name, &__descr  {
+      font-family: Quicksand;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 29px;
+      color: $dark-100;
+  }
+
+  &__descr {
+      font-weight: normal;
+  }
+}
+
+.types {
+  &__container {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 50px;
+      max-width: 400px;
+  }
+
+  &__descr {
+      flex-basis: 70%;
+  }
+
+  &__tag {
+      flex-basis: 30%;
+      color: $dark-25;
+      text-align: right;
+      padding-right: 30px;
+
+      &--h1 {
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 24px;
+          line-height: 29px;
+      }
+
+      &--h2 {
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 19px;
+          line-height: 23px;
+      }
+
+      &--h3 {
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 15px;
+          text-transform: uppercase;
+      }
+
+      &--body {
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 24px;
+      }
+  }
+}
