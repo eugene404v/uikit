@@ -549,4 +549,38 @@ button {
   line-height: 24px;
 }
 
+.pie__container {
+  display: flex;
+  justify-content: space-between;
+}
+.pie__wrapper {
+  height: 120px;
+  width: 120px;
+  position: relative;
+}
+.pie__title {
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  text-align: center;
+  top: 0;
+  left: 0;
+  padding-top: 35px;
+  color: #BC9CFF;
+}
+.pie__label {
+  position: relative;
+  padding-left: 15px;
+}
+.pie__label:before {
+  content: "";
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: red;
+  left: 0;
+  top: 0;
+}
+
 /*# sourceMappingURL=/colors.8414127a.css.map */

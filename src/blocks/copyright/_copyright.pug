@@ -1,0 +1,10 @@
+include ./../logo/_logo.pug
+include ./../socials/_socials.pug
+
+mixin copyright(styles)
+  footer(class="copyright "+styles)
+    +logo("href", "title", "", "alt", "styles")
+    p.copyright__text Copyright © 2018 Toxin отель. Все права зачищены.
+    +socials()
+
+

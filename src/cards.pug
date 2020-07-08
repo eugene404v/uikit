@@ -1,20 +1,13 @@
-include pug/mixins.pug
+extends ./templates/template.pug
+include ./blocks/uiKit/_uiKit.pug
 
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title Cards
-        link(rel="stylesheet", href="main.scss")
-    body
-        main.ui-kit.ui-kit--dark
-          section.cards
-            .cards__column1
-              +searchroom("ДД.ММ.ГГГГ", "ДД.ММ.ГГГГ", "Сколько гостей", "")
-              +signup("")
-            .cards__column2
-              +booking("№888", "люкс", "9 990₽", "19.08.2019", "23.08.2019", "3 гостя", "9 990₽ х 4 суток", "39 960₽", "Сбор за услуги: скидка 2 179₽", "0₽", "Сбор за дополнительные услуги", "300₽", "Информация", "38 081₽")
-              +login()
-            .cards__column3
+
+
+block title 
+  title Cards
+
+block content
+  +uiKit("ui-kit--dark")
+    include ./blocks/cards/_cards.pug
+block scripts
+  script(src="./cards.js")

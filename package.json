@@ -5,16 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel src/pages/**/*.pug --open",
-    "build": "parcel build src/pages/**/*.pug -d docs --public-url ./"
+    "start": "parcel src/*.pug --open",
+    "build": "parcel build src/*.pug -d docs --public-url ./"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "pug": "^2.0.4",
     "sass": "^1.26.5"
   },
   "dependencies": {
+    "chart.js": "^2.9.3",
     "normalize.css": "^8.0.1"
   }
 }

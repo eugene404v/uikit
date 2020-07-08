@@ -1,0 +1,33 @@
+include ./../submit/_submit.pug
+include ./../dateDropdown/_dateDropdown.pug
+include ./../dropdown/_dropdown.pug
+
+
+mixin booking(header, roomtype, price, arrivalday, leaveday, guests, allpricedays, allpricecount, costdescr, costcount, upsaledescr, upsalecount, info, fullprice)
+  section.booking
+    .booking__wrapper                    
+      h6.booking__header= header
+        span.booking__type= roomtype
+      p.booking__price
+        span.booking__price-count= price
+        span.booking__price-day в сутки
+    .booking__wrapper
+      +date-dropdown("прибытие", arrivalday, "")
+      +date-dropdown("выезд", leaveday, "")
+    h3 гости
+    +dropdown("dropdown--closed booking__guests", guests)
+    .booking__wrapper.booking__wrapper--calc
+      span.booking__allprice-days= allpricedays
+      span.booking__allprice-count= allpricecount
+    .booking__wrapper.booking__wrapper--calc
+      span.booking__cost-descr= costdescr
+        a.booking__info(href="#" title=""+info)
+      span.booking__cost-count= costcount
+    .booking__wrapper.booking__wrapper--calc
+      span.booking__upsale-descr= upsaledescr
+        a.booking__info(href="#" title=""+info)
+      span.booking__upsale-count= upsalecount
+    .booking__wrapper.booking__wrapper--sum
+      h2 Итого
+      h2.booking__fullprice= fullprice
+    +submit("забронировать", "", "")

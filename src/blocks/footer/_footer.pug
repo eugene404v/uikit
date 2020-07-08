@@ -1,0 +1,35 @@
+include ./../logo/_logo.pug
+include ./../socials/_socials.pug
+include ./../subscribe/_subscribe.pug
+
+mixin footercolumn(links)
+  ul
+    - for (let i=0; i<links.length; i++)
+      li
+        a(class="footer__link" href=""+links[i].href, title=""+links[i].value)= links[i].value
+
+
+
+mixin footer(footerNav, footerAbout, footerSupport, styles)
+  footer(class="footer "+styles)
+    .footer__wrapper.footer__wrapper--paddings
+      .footer__column.footer__column--wide
+        +logo("href", "title", "", "footer__logo")
+        p Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+      .footer__column
+        h3.footer__title navigation
+        +footercolumn(footerNav)
+      .footer__column
+        h3.footer__title about us
+        +footercolumn(footerAbout)
+      .footer__column
+        h3.footer__title support
+        +footercolumn(footerSupport)
+      .footer__column.footer__column--wide
+        h3.footer__title Subscribe to our newsletter
+        p.footer__text Receive our latest news and promotions in your inbox!
+        +subscribe("footer__subscribe", "Your email address", "name", "action")
+    .footer__bottom
+      .footer__wrapper
+        p Copyright © 2018 Toxin отель. Все права зачищены.
+        +socials()

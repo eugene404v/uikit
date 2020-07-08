@@ -1,0 +1,12 @@
+include ./../submit/_submit.pug
+include ./../dateDropdown/_dateDropdown.pug
+include ./../dropdown/_dropdown.pug
+
+mixin searchroom(arrivalday, leaveday, guests, styles)
+  section(class="searchroom "+styles)
+    h1.searchroom__header Найдём номера под ваши пожелания
+    .searchroom__wrapper
+      +date-dropdown("прибытие", arrivalday, "dropdown--closed")
+      +date-dropdown("выезд", leaveday, "dropdown--closed")
+    +dropdown("dropdown--closed searchroom__guests", guests)
+    +submit("подобрать номер", "", "")

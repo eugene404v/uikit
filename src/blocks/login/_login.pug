@@ -1,0 +1,14 @@
+include ./../textField/_text-field.pug
+include ./../submit/_submit.pug
+include ./../btn/_btn.pug
+
+mixin login(action, styles)
+  section(class="login "+styles)
+    h1.login__header Войти
+    form(action=""+action)
+      +text-field("name", "Email", "login__email")
+      +text-field("name", "Пароль", "login__password")
+      +submit("войти", "login__submit", "")
+      .login__footer
+        p Нет аккаунта на Toxin? 
+        +btn("создать", "btn-empty")

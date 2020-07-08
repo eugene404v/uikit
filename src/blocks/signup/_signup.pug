@@ -1,0 +1,25 @@
+include ./../textField/_text-field.pug
+include ./../submit/_submit.pug
+include ./../btn/_btn.pug
+include ./../submit/_submit.pug
+include ./../toggle/_toggle.pug
+include ./../radio/_radio.pug
+
+mixin signup(action, styles)
+  section(class="signup "+styles)
+    h1.signup__header Регистрация аккаунта
+    form(action=""+action )
+      +text-field("name", "Имя", "signup__name")
+      +text-field("name", "Фамилия", "signup__surname")
+      +radio("", "Мужчина", "sign", "sign1", "male")
+      +radio("", "Женщина", "sign", "sign2", "female")
+      h3.signup__subheader дата рождения
+      +text-field("name", "ДД.ММ.ГГГГ", "text-field--masked")
+      h3.signup__subheader данные для входа в сервис
+      +text-field("name", "Email", "signup__email")
+      +text-field("name", "Пароль", "signup__password")
+      +toggle("", "Получать спецпредложения", "name", "spam", "value")
+      +submit("перейти к оплате", "signup__submit", "")
+      .signup__wrapper
+        span Уже есть аккаунт на Toxin
+        +btn("войти", "btn-empty")

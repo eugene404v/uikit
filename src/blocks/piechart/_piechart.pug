@@ -1,0 +1,15 @@
+mixin pie(styles, id, polls)
+  section(class="pie "+styles)
+    h2.pie__header Впечатления от номера
+    .pie__container
+      .pie__wrapper
+        canvas.pie__canvas(width="120" height="120")
+        h2.pie__title= polls
+          p.pie__subtitle голосов
+      ul.pie__list
+        li.pie__label.pie__label--great Великолепно
+        li.pie__label.pie__label--good Хорошо
+        li.pie__label.pie__label--notbad Удовлетворительно
+        li.pie__label.pie__label--disgusted Разочарован
+
+         
