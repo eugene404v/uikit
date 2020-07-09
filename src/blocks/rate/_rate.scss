@@ -1,0 +1,26 @@
+.rate {
+  display: inline-flex;
+  flex-direction: row-reverse;
+
+  &__item {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: red;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover,
+    &:hover ~ .rate__item {
+      background-color: green;   
+    }
+  }
+
+  &[data-total-value="1"] .rate__item:nth-child(n+5),
+  &[data-total-value="2"] .rate__item:nth-child(n+4),
+  &[data-total-value="3"] .rate__item:nth-child(n+3),
+  &[data-total-value="4"] .rate__item:nth-child(n+2),
+  &[data-total-value="5"] .rate__item:nth-child(n+1) {
+    background-color: black;
+  }
+}

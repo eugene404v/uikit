@@ -1,6 +1,8 @@
 extends ./templates/template.pug
 include ./blocks/uiKit/_uiKit.pug
 include ./blocks/piechart/_piechart.pug
+include ./blocks/logo/_logo.pug
+
 
 block title 
   title Colors&Types
@@ -9,6 +11,6 @@ block content
   +uiKit("")
     include ./blocks/colorsTypes/_colorsTypes.pug
     +pie("", "", "260")
-    //-canvas.pie__canvas
+    +logo
 block scripts
   script(src="./colors.js")

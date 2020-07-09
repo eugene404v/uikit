@@ -22032,11 +22032,9 @@ var _chart = _interopRequireDefault(require("chart.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ctx = document.querySelector('.pie__canvas');
-console.log(ctx);
 var myChart = new _chart.default(ctx, {
   type: 'doughnut',
   data: {
-    labels: ['Red', 'Blue', 'Yellow'],
     datasets: [{
       label: '# of Votes',
       data: [25, 25, 50],
@@ -22084,7 +22082,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "20579" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "28147" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

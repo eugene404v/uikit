@@ -4,7 +4,7 @@ include ./../btn/_btn.pug
 mixin header(links, logged, styles, userlink, username)
   header(class="header "+styles)
     .header__wrapper
-      +logo("href", "title", "", "styles")
+      +logo("href", "title", "styles")
       nav.header__nav
         - for (let i=0; i<links.length; i++)
           a(class="header__link "+links[i].styles, href=""+links[i].href, title=""+links[i].value)= links[i].value

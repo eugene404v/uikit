@@ -13,6 +13,8 @@ include ./../pagination/_pagination.pug
 include ./../expandable/_expandable.pug
 include ./../feature/_feature.pug
 include ./../bulletlist/_bulletlist.pug
+include ./../rate/_rate.pug
+
 
 mixin form-element(name, descr)
   div
@@ -57,7 +59,8 @@ section.forms
       +like("2", "")
       +like("12", "like--active")
     +form-element("rate button", "")
-      //-STARS RATING***************************************
+      +rate("", "4")
+      +rate("", "5")
   .forms__btns
     +form-element("range slider", "1111")
       //-SLIDER***************************************

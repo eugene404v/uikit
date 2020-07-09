@@ -195,11 +195,28 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"normalize.css":"../node_modules/normalize.css/normalize.css","_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"forms.js":[function(require,module,exports) {
+},{"normalize.css":"../node_modules/normalize.css/normalize.css","_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"blocks/rate/_rate.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _default = document.querySelectorAll('.rate__item').forEach(function (item) {
+  return item.addEventListener('click', function () {
+    item.parentNode.dataset.totalValue = item.dataset.itemValue;
+  });
+});
+
+exports.default = _default;
+},{}],"forms.js":[function(require,module,exports) {
 "use strict";
 
 require("./forms.scss");
-},{"./forms.scss":"forms.scss"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./blocks/rate/_rate");
+},{"./forms.scss":"forms.scss","./blocks/rate/_rate":"blocks/rate/_rate.js"}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -227,7 +244,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "20579" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "28147" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

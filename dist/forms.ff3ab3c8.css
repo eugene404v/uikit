@@ -921,4 +921,23 @@ button {
   left: 0;
 }
 
+.rate {
+  display: inline-flex;
+  flex-direction: row-reverse;
+}
+.rate__item {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: red;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.rate__item:hover, .rate__item:hover ~ .rate__item {
+  background-color: green;
+}
+.rate[data-total-value="1"] .rate__item:nth-child(n+5), .rate[data-total-value="2"] .rate__item:nth-child(n+4), .rate[data-total-value="3"] .rate__item:nth-child(n+3), .rate[data-total-value="4"] .rate__item:nth-child(n+2), .rate[data-total-value="5"] .rate__item:nth-child(n+1) {
+  background-color: black;
+}
+
 /*# sourceMappingURL=/forms.ff3ab3c8.css.map */
