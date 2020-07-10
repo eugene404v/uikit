@@ -1,0 +1,10 @@
+mixin range(title)
+  section.range
+    .range__wrapper
+      h3.range__title= title
+      .range__controls
+        input(type="text").range__input#range-input1
+        span -
+        input(type="text").range__input#range-input2
+    .range__slider#range-slider
+    block

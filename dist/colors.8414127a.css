@@ -588,18 +588,20 @@ button {
   flex-direction: row-reverse;
 }
 .rate__item {
-  height: 30px;
-  width: 30px;
+  height: 24px;
+  width: 24px;
   border-radius: 50%;
-  background-color: red;
+  background-image: url("/star_border.4a86dd8a.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
   cursor: pointer;
   transition: 0.2s;
 }
 .rate__item:hover, .rate__item:hover ~ .rate__item {
-  background-color: green;
+  background-image: url("/star.7a31966d.svg");
 }
 .rate[data-total-value="1"] .rate__item:nth-child(n+5), .rate[data-total-value="2"] .rate__item:nth-child(n+4), .rate[data-total-value="3"] .rate__item:nth-child(n+3), .rate[data-total-value="4"] .rate__item:nth-child(n+2), .rate[data-total-value="5"] .rate__item:nth-child(n+1) {
-  background-color: black;
+  background-image: url("/star.7a31966d.svg");
 }
 
 /*# sourceMappingURL=/colors.8414127a.css.map */

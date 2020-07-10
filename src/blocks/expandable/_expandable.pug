@@ -1,5 +1,5 @@
-mixin expandable(name, styles)
+mixin expandable(name, styles, id)
   div(class="expandable "+styles)
-    h3.expandable__header= name
+    h3.expandable__header(id=""+id)= name
     ul.expandable__list
       block 

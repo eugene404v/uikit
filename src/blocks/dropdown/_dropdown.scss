@@ -7,14 +7,27 @@
     height: 44px;
     width: 100%;
     padding-left: 15px;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
+    &--closed {
+      border-color: $dark-25;
+      border-radius: 4px 4px 4px 4px;
+      box-shadow: none;
+    }
+
+    &--closed + .dropdown__content {
+      display: none;
+    }
   }
 
   &__content {
     border: 1px solid $dark-50;
+    background-color: #fff;
     border-top: none;
     border-radius: 0 0 4px 4px;
     padding: 7px 7px 13px 13px;
     @include h3;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   }
 
   &__item {
@@ -37,10 +50,7 @@
     display: none;
   }
 
-  &--closed .dropdown__input {
-    border-color: $dark-25;
-    border-radius: 4px 4px 4px 4px;
-  }
+
 
   &__calc {
     width: 92px;

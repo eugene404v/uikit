@@ -1,0 +1,23 @@
+@import './../node_modules/nouislider/distribute/nouislider.css';
+@import './blocks/range/nouisliderCustom';
+
+.range {
+  max-width: 266px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__controls {
+    display: inline-flex;
+    color: $dark-50;
+  }
+
+  &__input {
+    color: $dark-50;
+    border: none;
+    width: 50px;
+    text-align: center;
+  }
+}

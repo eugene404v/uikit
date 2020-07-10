@@ -1,9 +1,9 @@
-mixin comments(href, name, src, ago, likes, likemodifier, styles)
+mixin comment(href, name, src, ago, likes, likemodifier, styles, likeId)
   section(class="comment "+styles)
     .comment__column
       a(href=""+href, title=""+name)
         img(src=""+src, alt=""+name).comment__photo
-      +like(likes, likemodifier)
+      +like(likes, likemodifier, likeId)
     .comment__column
       a(href=""+href, title=""+name).comment__name= name
       p= ago

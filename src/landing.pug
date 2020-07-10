@@ -1,0 +1,19 @@
+extends ./templates/template.pug
+
+include ./blocks/header/_header.pug
+include ./blocks/footer/_footer.pug
+
+
+block variables
+  include ./blocks/header/_headerData.pug
+
+block title 
+  title Headers & footers
+
+block content
+  +header(headerlinks, "true", "styles", "", "")
+  include ./blocks/landing/_landing.pug
+  +footer(footerNav, footerAbout, footerSupport, "styles")
+
+block scripts
+  script(src="./landing.js")

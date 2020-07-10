@@ -3,9 +3,15 @@
 
   &__header {
     cursor: pointer;
+    padding-right: 74px;
 
     &--closed {
       background-color: red;
     }
+
+    &--closed + .expandable__list {
+    display: none;
   }
+  }
+
 }

@@ -1,6 +1,6 @@
-mixin dropdown(styles, placeholder)
+mixin dropdown(styles, placeholder, triggerId)
   section(class="dropdown "+styles)
-    input.dropdown__input(type="text" placeholder=""+placeholder, disabled) 
+    .dropdown__input(id=""+triggerId)= placeholder 
     .dropdown__content    
       block
 

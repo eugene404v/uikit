@@ -10,10 +10,17 @@
   color: $dark-25;
   padding: 4px 10px 4px 20px;
   text-align: center;
+  background-image: url('./blocks/like/nonliked.svg');
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: 5px 3px;
+
+
 
   &--active,
   &:hover {
     border-color: $purple;
     color: $purple;
+    background-image: url('./blocks/like/liked.svg');
   }
 }

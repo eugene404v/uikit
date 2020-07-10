@@ -3,6 +3,18 @@
   padding-left: 58px;
   padding-bottom: 20px;
   padding-top: 20px;
+  background-image: url('./blocks/feature/lol.svg');
+  background-repeat: no-repeat;
+  background-size: 48px 48px;
+  background-position: 0 center;
+
+  &--window {
+    background-image: url('./blocks/feature/house.svg');
+  }
+
+  &--cosiness {
+    background-image: url('./blocks/feature/cosiness.svg');
+  }
 
   &__header {
     font-family: Montserrat;

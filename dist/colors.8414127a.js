@@ -195,7 +195,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"normalize.css":"../node_modules/normalize.css/normalize.css","_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/moment/moment.js":[function(require,module,exports) {
+},{"normalize.css":"../node_modules/normalize.css/normalize.css","./blocks\\rate\\star_border.svg":[["star_border.4a86dd8a.svg","blocks/rate/star_border.svg"],"blocks/rate/star_border.svg"],"./blocks\\rate\\star.svg":[["star.7a31966d.svg","blocks/rate/star.svg"],"blocks/rate/star.svg"],"_css_loader":"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/moment/moment.js":[function(require,module,exports) {
 var define;
 var global = arguments[3];
 //! moment.js
@@ -22082,7 +22082,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "28147" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "3713" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

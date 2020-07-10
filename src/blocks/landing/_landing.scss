@@ -1,0 +1,19 @@
+.landing {
+  min-height: 800px;
+  background-image: url('./blocks/landing/landing.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 70px 140px 20px 140px;
+  display: flex;
+  justify-content: space-between;
+
+  &__searchroom {
+    max-height: 380px;
+  }
+
+  &__text {
+    align-self: flex-end;
+    max-width: 270px;
+    text-align: right;
+  }
+}

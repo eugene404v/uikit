@@ -1,0 +1,26 @@
+extends ./templates/template.pug
+include ./blocks/uiKit/_uiKit.pug
+include ./blocks/header/_header.pug
+include ./blocks/footer/_footer.pug
+include ./blocks/copyright/_copyright.pug
+
+block variables
+  include ./blocks/header/_headerData.pug
+
+block title 
+  title Headers & footers
+
+block content
+  +uiKit("ui-kit--dark")
+    .headers
+      +header(headerlinks, "true", "styles", "", "")
+      +header(headerlinks, "false", "styles", "#", "Юлий Цезарь")
+    .footers
+      +footer(footerNav, footerAbout, footerSupport, "styles")
+      +copyright("styles")
+block scripts
+  script(src="./headers.js")
+
+  
+          
+          

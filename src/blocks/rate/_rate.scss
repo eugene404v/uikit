@@ -3,16 +3,18 @@
   flex-direction: row-reverse;
 
   &__item {
-    height: 30px;
-    width: 30px;
+    height:24px;
+    width: 24px;
     border-radius: 50%;
-    background-color: red;
+    background-image: url('./blocks/rate/star_border.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
     cursor: pointer;
     transition: .2s;
 
     &:hover,
     &:hover ~ .rate__item {
-      background-color: green;   
+      background-image: url('./blocks/rate/star.svg');   
     }
   }
 
@@ -21,6 +23,6 @@
   &[data-total-value="3"] .rate__item:nth-child(n+3),
   &[data-total-value="4"] .rate__item:nth-child(n+2),
   &[data-total-value="5"] .rate__item:nth-child(n+1) {
-    background-color: black;
+    background-image: url('./blocks/rate/star.svg');
   }
 }

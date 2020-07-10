@@ -9,7 +9,10 @@
     display: none;
 
     &:checked + .checkbox:before {
-      background-color: red;
+      background-image: url('./blocks/checkbox/check.svg');
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center;
     }
   }
 

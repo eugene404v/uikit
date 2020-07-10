@@ -14,6 +14,7 @@ include ./../expandable/_expandable.pug
 include ./../feature/_feature.pug
 include ./../bulletlist/_bulletlist.pug
 include ./../rate/_rate.pug
+include ./../range/_range.pug
 
 
 mixin form-element(name, descr)
@@ -56,14 +57,13 @@ section.forms
       +toggle("", "Получать спецпредложения", "2", "male", "value")
       +toggle("", "Получать спецпредложения", "2", "mal", "value")
     +form-element("like button", "")
-      +like("2", "")
-      +like("12", "like--active")
+      +like("2", "", "like1")
+      +like("12", "like--active", "like2")
     +form-element("rate button", "")
       +rate("", "4")
       +rate("", "5")
   .forms__btns
-    +form-element("range slider", "1111")
-      //-SLIDER***************************************
+    +range("Range Slider")
     +form-element("buttons", "")
       .forms__wrap-btns
         +btn("click me", "btn-fill")
@@ -82,14 +82,14 @@ section.forms
     +form-element("dropdown", "default")
       +dropdown("dropdown--closed", "2 спальни, 2 кровати...")
     +form-element("dropdown", "expanded")
-      +dropdown("", "2 спальни, 2 кровати...")
+      +dropdown("", "2 спальни, 2 кровати...", "trigger1")
         ul.dropdown__list    
           +dropdown__item("спальни", "2")
           +dropdown__item("спальни", "2")
           +dropdown__item("спальни", "0", "dropdown__counter--empty")
   .forms__drop2
     +form-element("dropdown", "")
-      +dropdown("", "Сколько гостей")
+      +dropdown("", "Сколько гостей", "trigger2")
         ul.dropdown__list    
           +dropdown__item("взрослые", "0", "dropdown__counter--empty")
           +dropdown__item("дети", "0", "dropdown__counter--empty")
@@ -99,7 +99,7 @@ section.forms
           button.dropdown__submit.btn-text применить
   .forms__drop3
     +form-element("dropdown", "")
-      +dropdown("", "3 гостя")
+      +dropdown("", "3 гостя", "trigger3")
         ul.dropdown__list    
           +dropdown__item("взрослые", "2")
           +dropdown__item("дети", "1")
@@ -108,8 +108,8 @@ section.forms
           button.dropdown__reset.btn-text.btn-text--disabled очистить
           button.dropdown__submit.btn-text применить
   .forms__expandable
-    +expandable("expandable checkbox list", "expandable--closed")
-    +expandable("expandable checkbox list")
+    +expandable("expandable checkbox list", "expandable--closed", "")
+    +expandable("expandable checkbox list", "", "trigger4")
       +checkbox("", "1", "check31", "value")
         span Завтрак
       +checkbox("", "1", "check32", "value")
@@ -140,5 +140,6 @@ section.forms
     +feature("Комфорт", "Шумопоглощающие стены", "feature--comfort")
     +feature("Удобство", "Окно в каждой из спален", "feature--window")
   .forms__comment
-    +comments("#", "Мурад Сарафанов", "", "5 дней назад", "12", "like--active")
+    +comment("#", "Мурад Сарафанов", "./blocks/comment/murad.png", "5 дней назад", "12", "like--active", "", "like3")
       p Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+  
